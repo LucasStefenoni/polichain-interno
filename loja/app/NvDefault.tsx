@@ -27,9 +27,7 @@ export function NvDefault() {
         <li>
           <a href="/feminino" className="text-black block py-2 px-3 rounded-sm hover:bg-gray-100">Feminino</a>
         </li>
-        <li>
           <CriarNFT></CriarNFT>
-        </li>
       </ul>
     </div>
     </div>
