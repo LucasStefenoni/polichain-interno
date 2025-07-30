@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Item } from "./Item";
+import { Item } from "../Item";
 
 export default function Home() {
   return (
@@ -8,22 +8,13 @@ export default function Home() {
         <div className="object-center">
           <div className="grid grid-cols-3 gap-15">
             <div>
-              <Item imagem="/camisa_branca.jpg" nome="Camisa Branca" valor={40.00}></Item>{ /*Div 01*/}
-            </div>
-            <div>
               <Item imagem="/vestido.webp" nome="Vestido" valor={120}></Item>{ /*Div 02*/}
-            </div>
-              <div>
-              <Item imagem="/calca.jpg" nome="Calça Jeans" valor={100}></Item>{ /*Div 03*/}
             </div>
             <div>
               <Item imagem="/salto.jpg" nome="Salto" valor={180}></Item>{ /*Div 04*/}
             </div>
             <div>
               <Item imagem="/bolsa.webp" nome="Bolsa" valor={90}></Item>{ /*Div 05*/}
-            </div>
-              <div>
-              <Item imagem="/tenis.webp" nome="Tênis" valor={180}></Item>{ /*Div 06*/}
             </div>
           </div>
     
