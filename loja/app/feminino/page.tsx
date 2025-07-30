@@ -8,13 +8,13 @@ export default function Home() {
         <div className="object-center">
           <div className="grid grid-cols-3 gap-15">
             <div>
-              <Item imagem="/vestido.webp" nome="Vestido" valor={120}></Item>{ /*Div 02*/}
+              <Item id="2" imagem="/vestido.webp" nome="Vestido" valor={120}></Item>{ /*Div 02*/}
             </div>
             <div>
-              <Item imagem="/salto.jpg" nome="Salto" valor={180}></Item>{ /*Div 04*/}
+              <Item id="4" imagem="/salto.jpg" nome="Salto" valor={180}></Item>{ /*Div 04*/}
             </div>
             <div>
-              <Item imagem="/bolsa.webp" nome="Bolsa" valor={90}></Item>{ /*Div 05*/}
+              <Item id="5" imagem="/bolsa.webp" nome="Bolsa" valor={90}></Item>{ /*Div 05*/}
             </div>
           </div>
     
