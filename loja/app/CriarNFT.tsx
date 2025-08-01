@@ -17,7 +17,7 @@ export const CriarNFT = () => {
     return (
       <li>
         {/*Conteúdo do ADM*/}
-        <a href="#" className="text-black block py-2 px-3 rounded-sm hover:bg-gray-100">Criar NFT</a>
+        <a href="/../../cupchain/app" className="text-black block py-2 px-3 rounded-sm hover:bg-gray-100">Criar NFT</a>
       </li>
     );
   }

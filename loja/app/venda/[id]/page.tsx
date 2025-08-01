@@ -3,7 +3,7 @@ import { produtos } from '@/app/data';
 import { UsarCupom } from '@/app/UsarCupom';
 import { notFound } from 'next/navigation';
 
-export default async function PaginaVenda({ params }: { params: { id: string } }) {
+export default function PaginaVenda({ params }: { params: { id: string } }) {
     const { id } = params;
     const produto = produtos.find((p) => p.id === id); 
 
