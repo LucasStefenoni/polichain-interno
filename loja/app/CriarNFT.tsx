@@ -1,11 +1,19 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
 
 export const CriarNFT = () => {
+  const [isClient, setIsClient] = useState(false);
   const { address, isConnected } = useAccount();
 
-  if (isConnected && address === '0xE1a12Bf819Ba6e6Bb3043A3E8FF7Fc4d9D8E0008') {
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
+  if (isConnected && address === '0xBcd4042DE499D14e55001CcbB24a551F3b954096') {
     return (
       <li>
         {/*Conteúdo do ADM*/}

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { NvDefault } from "./NvDefault";
 import { Providers } from "./providers";
+import { PegarCupom } from "./PegarCupom";
 import '@rainbow-me/rainbowkit/styles.css';
 
 const geistSans = Geist({
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Providers>
           <NvDefault />
           <main>{children}</main>
+          <PegarCupom></PegarCupom>  
         </Providers>
       </body>
     </html>
