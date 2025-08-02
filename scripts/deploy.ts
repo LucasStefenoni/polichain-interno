@@ -1,17 +1,24 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const [dono, destinatario] = await ethers.getSigners();
+  const [dono] = await ethers.getSigners();
+
+  const enderecoDestinatario = "0xE1a12Bf819Ba6e6Bb3043A3E8FF7Fc4d9D8E0008"; 
   const valorDoPagamentoInicial = ethers.parseEther("1.0"); 
 
-  console.log("Fazendo deploy do contrato com a conta:", dono.address);
-  console.log("Definindo o destinatario como:", destinatario.address);
-  
-  const contrato = await ethers.deployContract("PagamentoDireto", [destinatario.address], { value: valorDoPagamentoInicial});
+  console.log(`Deployando com a conta: ${dono.address}`);
+  console.log(`Definindo o destinatário como: ${enderecoDestinatario}`);
+  console.log(`Enviando um pagamento inicial de 1 ETH...`);
+
+  const contrato = await ethers.deployContract(
+    "PagamentoDireto",
+    [enderecoDestinatario],
+    { value: valorDoPagamentoInicial }
+  );
 
   await contrato.waitForDeployment();
 
-  console.log(`Contrato PagamentoDireto deployado em: ${contrato.target}`);
+  console.log(`Contrato deployado em: ${contrato.target}`);
 }
 
 main().catch((error) => {

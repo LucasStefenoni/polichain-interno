@@ -13,7 +13,7 @@ export const CriarNFT = () => {
   if (!isClient) {
     return null;
   }
-  if (isConnected && address === '0xBcd4042DE499D14e55001CcbB24a551F3b954096') {
+  if (isConnected && address === '0xE1a12Bf819Ba6e6Bb3043A3E8FF7Fc4d9D8E0008') {
     return (
       <li>
         {/*Conteúdo do ADM*/}

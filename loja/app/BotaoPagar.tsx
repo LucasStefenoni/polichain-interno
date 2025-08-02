@@ -6,7 +6,7 @@ import { formatUnits, parseEther } from 'viem';
 import { converterBrlParaEth } from './utils/conversor';
 import PagamentoDiretoABI from './abi/PagamentoDireto.json';
 
-const enderecoDoContrato = '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0'; 
+const enderecoDoContrato = '0xee1249C6BB7cFa643e7624D6219e96cf1Eab1b37'; 
 
 interface BotaoPagarBrlProps {
   valor: number;
