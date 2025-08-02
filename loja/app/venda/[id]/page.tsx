@@ -1,6 +1,6 @@
 import { produtos } from '@/app/data'; 
 import { notFound } from 'next/navigation';
-import VendaClient from '../VendaClient';
+import VendaClient from './VendaClient';
 
 export default async function PaginaVenda({ params }: { params: { id: string } }) {
     const { id } = params;
