@@ -10,7 +10,7 @@ interface itemProps {
 export const Item = (props: itemProps) => {
   return (
     <div className="max-w-sm bg-white border border-black rounded-lg">
-        <a href={"/venda/" + props.id} >
+        <a href={"/venda/" + props.id} id={props.id}>
             <img className="p-5 rounded-t-lg w-full h-50 object-scale-down" src={props.imagem} alt="" />
         </a>
         <div className="p-5">
