@@ -63,7 +63,7 @@ export function BotaoPagar(props: BotaoPagarBrlProps) {
     if (isConfirming) return 'Confirmando...';
     if (isLoading) return 'Processando...';
     if (isSuccess) return 'Pagamento Concluído!';
-    return `Comprar R$${props.valor.toFixed(2)}`;
+    return `Comprar R$${props.valor}`;
   };
   
   return (
