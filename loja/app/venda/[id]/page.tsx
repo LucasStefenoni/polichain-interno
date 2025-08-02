@@ -3,8 +3,8 @@ import { notFound } from 'next/navigation';
 import VendaClient from './VendaClient';
 import { use } from "react";
 
-export default async function PaginaVenda({params}: {params: Promise<{ id: string }>}) {
-    const { id } = use(params);
+export default async function PaginaVenda({ params }: { params: { id: string } }) {
+    const { id } = params;
     const produto = produtos.find((p) => p.id === id); 
 
     if (!produto) {
