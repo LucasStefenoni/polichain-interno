@@ -1,10 +1,13 @@
+'use client';
 import { BotaoPagar } from '@/app/BotaoPagar';
 import { produtos } from '@/app/data'; 
 import { UsarCupom } from '@/app/UsarCupom';
 import { notFound } from 'next/navigation';
+import { use } from 'react';
 
 export default function PaginaVenda({ params }: { params: { id: string } }) {
-    const { id } = params;
+    const resolvedParams = use(params);
+    const { id } = resolvedParams;
     const produto = produtos.find((p) => p.id === id); 
 
     if (!produto) {
