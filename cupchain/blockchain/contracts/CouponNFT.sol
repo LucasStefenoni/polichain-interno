@@ -11,7 +11,7 @@ contract CouponNFT is ERC721URIStorage, Ownable {
 
     constructor(address initialOwner) ERC721("CouponNFT", "CPN") Ownable(initialOwner) {}
 
-    function mintCoupon(address to, string memory uri) public onlyOwner {
+    function mintCoupon(address to, string memory uri) public {
         uint256 tokenId = nextTokenId++;
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
