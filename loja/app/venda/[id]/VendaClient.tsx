@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { BotaoPagar as BotaoPagar } from "@/app/BotaoPagar";
 import { UsarCupom } from '@/app/UsarCupom';
-import type { Produto } from '@/app/data'; // Importe o tipo do seu arquivo de dados
+import type { Produto } from '@/app/data'; 
 
 // Este componente recebe o produto já encontrado como uma prop
 export default function VendaClient({ produto }: { produto: Produto }) {
