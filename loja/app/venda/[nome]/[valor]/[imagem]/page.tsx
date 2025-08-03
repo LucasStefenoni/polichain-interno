@@ -20,7 +20,7 @@ export default async function PaginaVenda({ params }: { params: any }) {
                         <div className='col-span-5 h-10'></div>
                         <div className="col-span-5 h-10 text-center text-3xl font-bold"></div>
                         <div className='col-start-2'>
-                            <BotaoPagar valor={valor}/>
+                           <BotaoPagar valor={valor} descontoAtivo={false}/>
                         </div>
                         <div className='col-start-4'>
                             <VerificadorDePosseNFT/>
