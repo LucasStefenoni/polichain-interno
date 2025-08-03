@@ -6,8 +6,8 @@ import { useAccount, useWriteContract, useChainId } from 'wagmi'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { couponNftAbi } from '@/abi/CouponNFT'
 
-const CONTRACT_ADDRESS = '0x5FbDB2315678afecb367f032d93F642f64180aa3'
-const EXPECTED_CHAIN_ID = 31337 // Substitua se necessário
+const CONTRACT_ADDRESS = '0x9d7046257B4CD86584Dc7059EC3AA634c9aBcfc0'
+const EXPECTED_CHAIN_ID = 11155111 // Substitua se necessário
 
 // Substitua por suas chaves da Pinata
 const PINATA_API_KEY = process.env.NEXT_PUBLIC_PINATA_API_KEY

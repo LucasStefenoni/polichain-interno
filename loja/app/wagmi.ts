@@ -11,7 +11,7 @@ export const config = createConfig({
   // Configure como o Wagmi se conecta a cada rede
   transports: {
     [mainnet.id]: http(),
-    [sepolia.id]: http(),
+    [sepolia.id]: http(process.env.NEXT_PUBLIC_SEPOLIA_RPC_URL),
     [hardhat.id]: http(),
   },
 })

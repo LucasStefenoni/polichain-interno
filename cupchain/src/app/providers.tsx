@@ -1,40 +1,25 @@
-'use client';
+'use client'
 
-import { WagmiProvider } from 'wagmi';
-import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { getDefaultConfig } from '@rainbow-me/rainbowkit';
-import { http } from 'wagmi';
-import '@rainbow-me/rainbowkit/styles.css';
+import { WagmiProvider, http } from 'wagmi'
+import { RainbowKitProvider, getDefaultConfig } from '@rainbow-me/rainbowkit'
+import { sepolia } from 'wagmi/chains'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import '@rainbow-me/rainbowkit/styles.css'
 
-// 🧪 Hardhat local chain
-const localChain = {
-  id: 31337,
-  name: 'Hardhat',
-  network: 'hardhat',
-  nativeCurrency: {
-    name: 'Ether',
-    symbol: 'ETH',
-    decimals: 18,
-  },
-  rpcUrls: {
-    default: { http: ['http://localhost:8545'] },
-  },
-  blockExplorers: {
-    default: { name: 'Hardhat Explorer', url: 'http://localhost:8545' },
-  },
-} as const;
+// 🔑 Pega URL da Sepolia do .env
+const SEPOLIA_RPC_URL = process.env.NEXT_PUBLIC_SEPOLIA_RPC_URL || ''
 
+// 🟣 Configuração com Sepolia
 const config = getDefaultConfig({
   appName: 'Cupchain',
-  projectId: 'cupchain-local', // qualquer string, mesmo sem WalletConnect ativo
-  chains: [localChain],
+  projectId: 'cupchain-sepolia', // pode ser qualquer string se não usar WalletConnect
+  chains: [sepolia],
   transports: {
-    [localChain.id]: http(),
+    [sepolia.id]: http(SEPOLIA_RPC_URL),
   },
-});
+})
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient()
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -43,5 +28,5 @@ export function Providers({ children }: { children: React.ReactNode }) {
         <RainbowKitProvider>{children}</RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
-  );
+  )
 }
