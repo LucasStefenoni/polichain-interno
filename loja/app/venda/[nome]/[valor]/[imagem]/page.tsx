@@ -1,7 +1,7 @@
 
 import { BotaoPagar as BotaoPagar } from "@/app/BotaoPagar";
 import { UsarCupom } from '@/app/UsarCupom';
-
+import { VerificadorDePosseNFT } from "@/app/VerificadorNFT";
 export default async function PaginaVenda({ params }: { params: any }) {
     const nome = await decodeURIComponent(await params.nome);
     const valor = await parseFloat(await params.valor);
@@ -23,7 +23,7 @@ export default async function PaginaVenda({ params }: { params: any }) {
                             <BotaoPagar valor={valor}/>
                         </div>
                         <div className='col-start-4'>
-                            <UsarCupom/>
+                            <VerificadorDePosseNFT/>
                         </div>
                     </div>
                 </div>
