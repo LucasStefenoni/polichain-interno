@@ -27,9 +27,34 @@ export function BotaoPagar(props: BotaoPagarBrlProps) {
     return parseFloat(formatUnits(balanceData.value, balanceData.decimals)); 
   }, [balanceData]); 
    
-  const handlePayment = async (valorEmBrlString: string) => { 
-    // ... (sua função handlePayment continua a mesma)
-  }; 
+ const handlePayment = async (valorEmBrlString: string) => {
+    if (!isConnected) return alert('Por favor, conecte sua carteira primeiro.');
+    setIsLoading(true);
+
+    try {
+      const valorEmBrl = parseFloat(valorEmBrlString);
+      if (isNaN(valorEmBrl) || valorEmBrl <= 0) {
+        throw new Error("Valor em BRL é inválido.");
+      }
+
+      console.log("Convertendo valor...");
+      const valorEmEth = await converterBrlParaEth(valorEmBrl);
+      if (saldoComoNumero < valorEmEth) return alert('Saldo insuficiente');
+      console.log("Aguardando confirmação do usuário no MetaMask...");
+      await writeContractAsync({
+        address: enderecoDoContrato as `0x${string}`,
+        abi: PagamentoDiretoABI.abi,
+        functionName: 'efetuarPagamento',
+        value: parseEther(valorEmEth.toFixed(18)),
+      });
+
+    } catch (err: any) {
+      console.error("Pagamento falhou ou foi cancelado:", err.shortMessage);
+    } finally {
+      console.log("Finalizando processo.");
+      setIsLoading(false);
+    }
+  };
    
   // 2. Atualize a função 'buttonText'
   const buttonText = () => { 
